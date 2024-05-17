@@ -1,0 +1,41 @@
+<h2>template driven forms</h2>
+<div>
+    <form #signupForm="ngForm" (ngSubmit)="enregistrerutilisateur(signupForm)">
+        <table style="width: 60%;" cellpadding="5" cellspacing="5">
+        <tr>
+            <td style="width: 40%;">
+                <label for="username">USer Name</label>
+            </td>
+            <td style="width: 60%;">
+                <input type="text" name="username" placeholder="Taper le Nom" id="username" [(ngModel)]="username" required>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 40%;">
+                <label for="email">Email</label>
+            </td>
+            <td style="width: 60%;">
+                <input type="text" name="email" placeholder="Taper Email" id="email" [(ngModel)]="email" required>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 40%;">
+                <label for="password">Password</label>
+            </td>
+            <td style="width: 60%;">
+                <input type="password" name="password" placeholder="Taper Password" id="password" [(ngModel)]="password" required>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 40%;"></td>
+            <td style="width: 60%;">
+                <button type="submit" >Enregistrer</button>
+            </td>
+        </tr>
+        </table>
+    </form>
+    <div *ngIf="affichageMessage">
+        <h3>Merci {{formData.username}} pour votre Enregistrement</h3>
+    </div>
+</div>
+

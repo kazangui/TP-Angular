@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Calculatrices</h2>
+  <div class="form-group">
+    <label for="num1">Numéro 1 :</label>
+    <input type="number" class="form-control" id="num1" [(ngModel)]="num1"/>
+  </div>
+
+  <div class="form-group">
+    <label for="num2">Numéro 2 :</label>
+    <input type="number" class="form-control" id="num2" [(ngModel)]="num2"/>
+  </div> <br>
+
+  <tr><td><button class="btn btn-primary" (click)="somme()">Somme</button></td>
+  <td><button class="btn btn-primary" (click)="Multiplication()">Multiplication</button></td>
+  <td><button class="btn btn-primary" (click)="Divission()">Division</button></td>
+  <td><button class="btn btn-primary" (click)="sous()">Soustraction</button></td>
+</tr>
+  <br>
+
+  <p>{{rslt}}</p>
+</div>
+
+

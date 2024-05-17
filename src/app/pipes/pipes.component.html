@@ -1,0 +1,75 @@
+<div class="container">
+  <h2>TP pipes</h2>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes personnel</h4>
+      <div class="form-group">
+        <label for="HT">Montant HT :</label>
+        <input type="number" class="form-control" id="HT" [(ngModel)]="HT"/>
+        <p class="mt-2">Montant TTC : {{ HT | multiple:'0.1' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes nombre de caractères</h4>
+      <div class="form-group">
+        <label for="atos">Entrez le caractère à compter :</label>
+        <input type="text" class="form-control" id="atos" [(ngModel)]="atos"/>
+      </div>
+      <div class="form-group">
+        <label for="texte">Texte :</label>
+        <input type="text" class="form-control" id="texte" [(ngModel)]="texte"/>
+      </div>
+      <p>Nombre de caractères '{{ atos }}' dans le texte : {{ texte | count: atos }}</p>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes date</h4>
+      <p>Date : {{ date }}</p>
+      <p>Short date : {{ date | date:"shortDate" }}</p>
+      <p>Full date : {{ date | date:"fullDate" }}</p>
+      <p>Time : {{ date | date:'HH:MM' }}</p>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes number</h4>
+      <p>Le nombre : {{ nombre }}</p>
+      <p>2 nombres après la virgule : {{ nombre | number:'2.2-2' }}</p>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes Devise</h4>
+      <p>Nombre : {{ nombre }}</p>
+      <p>USD Dollar ($): {{ nombre | currency:"USD":true }}</p>
+      <p>USD Dollar : {{ nombre | currency:"USD":false }}</p>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes de chaine de caracteres</h4>
+      <p>Message : {{ message }}</p>
+      <p>Lettres en majuscule : {{ message | uppercase }}</p>
+      <p>Lettres en minuscule : {{ message | lowercase }}</p>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">Pipes pourcentage</h4>
+      <p>Nombre : {{ nombre }}</p>
+      <p>Format avec deux places : {{ nombre | percent:'.4' }}</p>
+    </div>
+  </div>
+
+
+</div>

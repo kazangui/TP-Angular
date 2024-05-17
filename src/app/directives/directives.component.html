@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Directives</h2>
+  <div class="card">
+    <div class="card-body">
+      <p>NgIf</p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngIf="tab[0] % 2 !== 0">{{ tab[0] }} est impair</li>
+        <li class="list-group-item" *ngIf="tab[1] % 2 !== 0">{{ tab[1] }} est impair</li>
+        <li class="list-group-item" *ngIf="tab[2] % 2 !== 0">{{ tab[2] }} est impair</li>
+        <ng-container *ngIf="tab[1] % 2 !== 0; else elseTemplate">
+          <li class="list-group-item">{{ tab[1] }} est impair</li>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <li class="list-group-item">{{ tab[1] }} est pair</li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <p>ngFor</p>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let val of tab; let i=index">{{ i }}: {{ val }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-body">
+      <p>ngSwitch</p>
+      <ul class="list-group">
+        <ng-container *ngFor="let v of tab">
+          <ng-container [ngSwitch]="true">
+            <li class="list-group-item" *ngSwitchCase="v < 5">redoublant</li>
+            <li class="list-group-item" *ngSwitchCase="v < 10">rattrapage</li>
+            <li class="list-group-item" *ngSwitchDefault>Admin</li>
+          </ng-container>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<h1>tp httpClient (observable)</h1> <br><br>
+<div>
+  ville : <input type="text" [(ngModel)]="ville">
+  <button (click)="getWeatherData(ville)">valide</button>
+</div>
+<div>
+  <img src="{{ image }}" /><p>pays : {{ pays }}</p>
+  <p>temp : {{ temp }}</p>
+  <p>humidite : {{ hum }}</p>
+  <p>pressuce : {{ press }}</p>
+</div>

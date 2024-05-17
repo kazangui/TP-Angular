@@ -1,0 +1,15 @@
+
+<h1>tp httpClient (subscribe)</h1><br><br>
+
+<div>
+  ville : <input type="text" [(ngModel)]="ville">
+  <button (click)="getWeatherData()">valide</button>
+</div>
+<div>
+  <img src="{{ image }}" /><p>pays : {{ pays }}</p>
+  <p>temp : {{ temp }}</p>
+  <p>humidite : {{ hum }}</p>
+  <p>pressuce : {{ press }}</p>
+</div>
+<app-observable></app-observable>
+<router-outlet/>
